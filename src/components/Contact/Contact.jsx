@@ -2,7 +2,7 @@ import { FaUser } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import styless from "./Contact.module.css";
 
-const Contact = ({ contact }) => {
+const Contact = ({ contact, deleteContact }) => {
   return (
     <li className={styless.container}>
       <div className={styless.item}>
@@ -15,7 +15,11 @@ const Contact = ({ contact }) => {
           {contact.number}
         </p>
       </div>
-      <button type="button" className={styless.button}>
+      <button
+        type="button"
+        className={styless.button}
+        onClick={() => deleteContact(contact.id)}
+      >
         Delete
       </button>
     </li>
